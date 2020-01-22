@@ -1,0 +1,46 @@
+Steps to Create Fragment by XML
+	1. Create a subclass of Fragment
+		- HelloFragment.java
+	2. Create a layout for Fragment
+		- fragment_hello.xml
+	3. Link layout with Fragment subclass
+		- Override onCreateView
+	4. Place the Fragment inside an Activity	(to place the fragment inside an activity by using the tag of <fragment> inside the activity_main.xml)
+		- <fragment> inside activity_main.xml
+
+
+FragmentManager:
+	- FragmentManager is responsible to handle all of these fragments inside each of the Activity class.
+	- All of these fragments are actually handled bu an interface known as FragmentManager.
+	- so the FragmentManager is actually an interface to interact with Fragment objects inside the Activity.
+	- FragmentManager, it actually manages all the fragments.
+	
+	Summary - Manages all fragment objects inside the Activity.
+	
+FragmentTransaction:
+	- So the transactions are actually, we add a Fragment, then we add Fragment B, then we remove Fragment B,
+	
+	
+Fragment Transaction taking place:
+	- Fragment A - add
+	- Fragment B - add
+	- Fragment B - remove
+	- Fragment C - add
+	- Fragment D - add
+	
+	Summary - API to perform a set of Fragment operations
+			- Add, Remove and Replace operations
+			- Adding Fragment to an Activity programmatically is more preferred than adding Fragment by XML
+
+- So all these addition and removal of the Fragments are known as fragment transactions
+- Fragment operations such as add, remove, replace a Fragment, attach a Fragment, detach a Fragment, show a Fragment, or hide a Fragment.
+
+	4. Place the Fragment inside an Activity
+		- Initialise FragmentManager
+		- Initialise FragmentTransaction
+		- Start add/remove/replace operation
+		- Commit the transaction
+
+Programmatically add Fragment using Java
+
+*** - So there is always one instance of a FragmentManager for one activity.
