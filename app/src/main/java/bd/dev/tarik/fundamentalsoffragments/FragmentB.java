@@ -24,7 +24,7 @@ public class FragmentB extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG, "onCreate");
+        Log.e(TAG, "onCreate");
     }
 
     @Nullable

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/relativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0AD"
+    android:orientation="vertical"
+    tools:context=".SendDataFromActivityToFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/etFirstNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:text="0"/>
+        <EditText
+            android:id="@+id/etSecondNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:text="0"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sendDataToFragmentUsingBundleObject"
+        android:text="SEND DATA TO FRAGMENT-Using Bundle"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sendDataToFragmentUsingFragmentObject"
+        android:text="SEND DATA TO FRAGMENT-Using Fragment"/>
+    <FrameLayout
+        android:id="@+id/containerFragmentA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10sp"
+        android:layout_centerInParent="true"/>
+
+</LinearLayout>

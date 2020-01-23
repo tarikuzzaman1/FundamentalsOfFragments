@@ -44,3 +44,60 @@ Fragment Transaction taking place:
 Programmatically add Fragment using Java
 
 *** - So there is always one instance of a FragmentManager for one activity.
+
+Transaction types:
+    - Add
+    - Remove
+    - Replace
+    - Attach
+    - Detach
+    - Show
+    - Hide
+
+
+TAG - whenever we need it inside our MainActivity.java
+    ADD
+        - Crate a new Fragment
+        - Get the id of the container layout
+        - Use add() to add the Fragment
+            - The Fragment is added to the container layout
+    Remove
+        - Get the reference to the Fragment to be removed
+        - Use remove() to remove the Fragment
+            - The Fragment is Destroyed and
+            - Detached from the host Activity
+    Replace
+        - Get the id of the container layout
+        - Get a reference to the new Fragment
+        - Use replace() to replace the content Fragment of the container layout
+            - The new Fragment fills the container
+            - The old fragment if any is destroyed
+
+    Detach
+        - Get the reference to the Fragment
+        - Use detach() to detach the Fragment from Activity UI
+            - The Fragment's View is destroyed
+            - The Fragment and its UI is detached from the host Activity
+    Attach
+        - Get the reference to the DETACHED Fragment
+        - Use attach() to reattach the Fragment
+            - The Fragment's View is recreated
+            - The Fragment is re-attached to the Activity and is Visible
+    Hide
+        - Get the reference to the Fragment to hide
+        - Use hide() to hide to Fragment
+            -Fragment's View becomes invisible
+            - The Fragment continue to be in Resumed State
+    Show
+        - Get the reference to the HIDDEN Fragment
+        - Use show() to make it Visible
+            - The View of the Fragment is now Visible
+            - Remains in Resumed state as it was earlier
+
+How to Pass Data From Activity to Fragment? (Android Fundamentals Activities)
+    Two Ways:
+        - Using Bundle Object
+        - Using Fragment Object
+- Bundle object actually stores a value inside it as a key value pair.
+
+How to Pass Data From Fragment to Activity

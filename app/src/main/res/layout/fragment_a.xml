@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0FF">
+    android:background="#FD0">
 
     <TextView
         android:id="@+id/textView"
@@ -12,5 +12,6 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:gravity="center"
+        android:textStyle="bold"
         android:text="Fragment A" />
 </LinearLayout>
