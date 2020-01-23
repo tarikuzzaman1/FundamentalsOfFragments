@@ -2,29 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBC"
     android:orientation="vertical"
-    android:padding="10sp">
+    android:padding="20sp"
+    android:background="#FA0">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fragment Show Data" />
+        android:text="Fragment Y: "
+        android:textColor="@android:color/white"
+        android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ADD TWO NUMBERS"/>
     <TextView
-        android:id="@+id/txvResult"
+        android:id="@+id/txvXResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10sp"
         android:textStyle="bold"
         android:textSize="30sp"
-        android:text="RESULT" />
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"
+        android:text="RESULT"/>
 
 </LinearLayout>

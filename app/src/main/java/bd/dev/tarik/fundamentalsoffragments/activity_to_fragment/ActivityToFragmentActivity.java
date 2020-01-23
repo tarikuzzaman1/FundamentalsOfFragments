@@ -1,4 +1,4 @@
-package bd.dev.tarik.fundamentalsoffragments;
+package bd.dev.tarik.fundamentalsoffragments.activity_to_fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -8,15 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class SendDataFromActivityToFragment extends AppCompatActivity {
-    private static final String TAG = SendDataFromActivityToFragment.class.getSimpleName();
+import bd.dev.tarik.fundamentalsoffragments.Constants;
+import bd.dev.tarik.fundamentalsoffragments.R;
+
+public class ActivityToFragmentActivity extends AppCompatActivity {
+    private static final String TAG = ActivityToFragmentActivity.class.getSimpleName();
     private FragmentManager manager;
     private EditText etFirstNumber, etSecondNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.send_data_from_activity_fragment);
+        setContentView(R.layout.activity_activity_to_fragment);
         manager = getSupportFragmentManager();
         etFirstNumber = findViewById(R.id.etFirstNumber);
         etSecondNumber = findViewById(R.id.etSecondNumber);
@@ -32,7 +35,7 @@ public class SendDataFromActivityToFragment extends AppCompatActivity {
         bundle.putInt(Constants.FIRST_NUM, firstNumber);
         bundle.putInt(Constants.SECOND_NUM, secondNumber);
 
-        ActivityToFragment fragment = new ActivityToFragment();
+        FragmentActivityToFragment fragment = new FragmentActivityToFragment();
         fragment.setArguments(bundle);
 
         FragmentTransaction transaction = manager.beginTransaction();
@@ -48,7 +51,7 @@ public class SendDataFromActivityToFragment extends AppCompatActivity {
         bundle.putInt(Constants.FIRST_NUM, firstNumber);
         bundle.putInt(Constants.SECOND_NUM, secondNumber);*/
 
-        ActivityToFragment fragment = new ActivityToFragment();
+        FragmentActivityToFragment fragment = new FragmentActivityToFragment();
         //fragment.setArguments(bundle);
         fragment.setData(firstNumber, secondNumber); // Passing the primitive Data Type
         fragment.setEmployeeObj(new Employee()); // Passing Non-primitive Type Data

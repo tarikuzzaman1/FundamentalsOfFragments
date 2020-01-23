@@ -101,3 +101,78 @@ How to Pass Data From Activity to Fragment? (Android Fundamentals Activities)
 - Bundle object actually stores a value inside it as a key value pair.
 
 How to Pass Data From Fragment to Activity
+    - Create an Interface MyListener
+        - Define a callback method
+    - Implement MyListener in Activity
+    - call MyListener method from Fragment using the object reference of the Activity
+
+** Understanding Inter-fragment Communication
+    - Sending Data from One Fragment to Another within the same Parent Activity
+
+    Take Input in FragmentA
+        - First Number
+        - Second Number
+    Pass the Data to FragmentB
+        - Add Two Numbers(First Number + Second Number)
+        - Display the Result
+    
+
+
+** Enabling the Back Button with Back Stack
+    - Why Back Navigation?
+    - The Activity by default responds to the Back Button, but Fragments, on the other hand, are not aware of the Back Button
+
+
+    Default Case
+        - Activity responds to Back Button
+        - Fragments are not aware of Back Button
+            - Fragments do not respond to Back Press
+
+    # Problem :
+        - How to make Fragments respond to Back Button Press?
+    # Solution :
+        - Use Back Stack
+
+    - Fragments by default do no respond to Back Button of Android Device
+    - If we use Back Stack concept
+        - Then we can enable back press for Fragments
+        - And we can switch back to our previous desired Fragment
+
+
+    @ Understand FragmentTransaction and Backstack
+    @ How to add Transaction to Backstack
+        - addToBackStack(null);
+        - addToBackStack(String TAG);
+
+    @ How to Pop the Backstack
+        - popBackStack()
+        - popBackStack(String TAG, int FLAG); // FLAG can have two values. The first value is 0, and the second value is a constant flag of POP_BACK_STACK_INCLUSIVE.
+            - int FLAG
+                - 0
+                - POP_BACK_STACK_INCLUSIVE
+- FLAG basically helps the FragmentManager to pop the Backstack, that is remove the latest FragmentTransaction that took place inside the Activity.
+
+When we call any of these two methods we will simply reverse the latest transaction that took place inside our Activity with the help of FragmentManager.
+That is, we will undo the recent FragmentTransaction that was added to the Backstack.
+
+@ Using Back Android Button to Undo the Transaction or Pop the Backstack
+
+
+=   =   =   =   =  FragmentTransaction and Back Stack  =   =   =   =   =
+
+manager.popBackStack("AddFragD", 0); // back to Top FragmentD
+
+manager.popBackStack("RemFragC", POP_BACK_STACK_INCLUSIVE); // Remove Including Me
+
+
+manager.popBackStack();
+
+
+
+
+
+
+
+
+
+
