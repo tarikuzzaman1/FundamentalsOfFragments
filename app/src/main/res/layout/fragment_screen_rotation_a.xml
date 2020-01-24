@@ -4,22 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10sp"
+    android:padding="20sp"
     android:background="#FD0">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="Screen Rotation Fragment A" />
+        android:text="Screen  Rotation Fragment A" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:gravity="center"
+        android:text="Medium Text" />
 
     <Button
         android:id="@+id/button"
@@ -33,7 +34,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Name" />
 
     <RadioButton
         android:id="@+id/radioButton"

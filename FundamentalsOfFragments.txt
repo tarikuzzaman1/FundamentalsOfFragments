@@ -191,8 +191,49 @@ manager.popBackStack();
         - THe Fragment is also Recreated fresh
 
 Impact on Views and variables?
+    - On a Fragment
+    - On the Views inside the Fragment
+    - On variables present inside the Fragment
+Handling Screen Rotation
+    - Saving data to Bundle
+        - onSaveInstanceState
+    - Retrieving data from Bundle
+        - onCreate(...)
+        - onCreateView(...)
+        - onActivityCreated(...)
 
 
+Restoring the Fragment State
+
+onSaveInstanceState() -> Save score in Bundle score = 47
+Retrieve score from Bundle object -> inside onCreate() or onCreateView(), onActivityCreated() score = 47
+
+Restoring Fragment State on Screen Rotation
+
+ - - - - - Uses - - - -
+    - Flexible user interface for Tablets and Phone
+    - Tabs using ViewPager
+        - Fixed Tabs
+        - Scroll Tabs
+        - Swipe Tabs
+    - Navigation Drawer
+    - Dialog Boxes
+
+What Next?
+Android App Components
+    - Activity
+    - Service
+    - BroadcastReceiver,
+    - ContentProvider
+Material Design
+    - Implementing Tabs
+    - Navigation Drawer
+
+
+Pluralsight library
+    - Android Material Design
+        Implementing Tabs.
+    - Getting Started with Android Material Design (Navigation Drawer)
 
 
 

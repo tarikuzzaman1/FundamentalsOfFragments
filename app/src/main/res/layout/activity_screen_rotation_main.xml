@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8D44DD"
-    android:padding="30sp"
+    android:padding="20sp"
     tools:context=".screen_rotation.ScreenRotationMainActivity">
 
     <fragment

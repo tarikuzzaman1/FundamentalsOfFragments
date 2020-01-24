@@ -37,6 +37,10 @@ public class ScreenRotationFragmentA extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate()");
+        //score = 0;
+        if (savedInstanceState != null) {
+            score = savedInstanceState.getInt("score_key", 0);
+        }
         Toast.makeText(getActivity(), "Score value : " + score, Toast.LENGTH_LONG).show();
     }
     @Override
@@ -46,10 +50,19 @@ public class ScreenRotationFragmentA extends Fragment {
         Log.i(TAG, "onCreateView()");
         button = view.findViewById(R.id.button);
         textView = view.findViewById(R.id.textView);
+
+        if (savedInstanceState != null) {
+            button.setText(savedInstanceState.getString("btn_key", "LOGIN"));
+            textView.setText(savedInstanceState.getString("txv_key"));
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textView.setText("Dummy Text");
+                button.setText("LOGOUT");
+                score = 47;
+                Toast.makeText(getActivity(), "Score value: " + score, Toast.LENGTH_SHORT).show();
             }
         });
         return view;
@@ -79,11 +92,14 @@ public class ScreenRotationFragmentA extends Fragment {
         Log.i(TAG, "onPause()");
     }
 
-/*    @Override
+    @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.i(TAG, "onSaveInstanceState()");
-    }*/
+        outState.putInt("score_key", score);
+        outState.putString("txv_key", textView.getText().toString());
+        outState.putString("btn_key", button.getText().toString());
+    }
 
     @Override
     public void onStop() {
