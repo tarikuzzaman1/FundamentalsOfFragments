@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8D44DD"
+    android:padding="30sp"
+    tools:context=".screen_rotation.ScreenRotationMainActivity">
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="bd.dev.tarik.fundamentalsoffragments.screen_rotation.ScreenRotationFragmentA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        tools:layout="@layout/fragment_screen_rotation_a"/>
+</RelativeLayout>

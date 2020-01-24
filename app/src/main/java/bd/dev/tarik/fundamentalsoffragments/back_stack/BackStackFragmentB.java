@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 
 import bd.dev.tarik.fundamentalsoffragments.R;
 
-import com.google.android.gms.plus.PlusOneButton;
-
 public class BackStackFragmentB extends Fragment {
 
     private static final String TAG = BackStackFragmentB.class.getSimpleName();

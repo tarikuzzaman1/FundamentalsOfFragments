@@ -47,7 +47,7 @@ public class BackStackMainActivity extends AppCompatActivity implements Fragment
     public void addBackstackFragmentB(View view) {
         BackStackFragmentB fragmentB = new BackStackFragmentB();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.container, fragmentB, "bsfragB");
+        transaction.add(R.id.containerBackStack, fragmentB, "bsfragB");
         transaction.addToBackStack("AddFragB");
         transaction.commit();
     }
@@ -67,7 +67,7 @@ public class BackStackMainActivity extends AppCompatActivity implements Fragment
     public void replaceByBackstackFragmentA(View view) {
         BackStackFragmentA fragmentA = new BackStackFragmentA();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.container, fragmentA, "bsfragA");
+        transaction.replace(R.id.containerBackStack, fragmentA, "bsfragA");
         transaction.addToBackStack("RepByFragA");
         transaction.commit();
     }
@@ -75,7 +75,7 @@ public class BackStackMainActivity extends AppCompatActivity implements Fragment
     public void replaceByBackstackFragmentB(View view) {
         BackStackFragmentB fragmentB = new BackStackFragmentB();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.container, fragmentB, "bsfragB");
+        transaction.replace(R.id.containerBackStack, fragmentB, "bsfragB");
         transaction.addToBackStack("RepByFragB");
         transaction.commit();
     }
@@ -144,11 +144,20 @@ public class BackStackMainActivity extends AppCompatActivity implements Fragment
     public void onBackStackChanged() {
         int length = manager.getBackStackEntryCount();
         StringBuilder msg = new StringBuilder("");
-        for (int i = length - 1; i >=0 ; i++) {
+        for (int i = length - 1; i >=0 ; i--) {
             msg.append("Index ").append(i).append(":");
             msg.append(manager.getBackStackEntryAt(i).getName());
             msg.append(" \n ");
         }
         Log.i(TAG, "\n" + msg.toString() + "\n");
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (manager.getBackStackEntryCount() > 0) {
+            manager.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

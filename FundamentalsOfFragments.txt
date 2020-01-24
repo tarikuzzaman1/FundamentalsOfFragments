@@ -167,6 +167,32 @@ manager.popBackStack("RemFragC", POP_BACK_STACK_INCLUSIVE); // Remove Including 
 
 manager.popBackStack();
 
+####### - - Multiple Changes in Single FragmentTransaction - - #######
+
+    - We can perform multiple changes to different Fragments in a single Transaction
+    - When Back Stack is popped
+        - All the changes in the Transaction are undone
+
+    - FragmentTransaction and Back Stack
+    - Interface OnBackStackChangedListener
+           @- onBackStackChanged()
+    (interface of OnBackStackChangedListener that triggers on method, onBackStackChanged(), when there is any change in the Back Stack entry of the transactions)
+
+    - Back Navigation
+        @- addToBackStack(...)
+        @- popBackStack(...)
+        (How to perform the Back Navigation with the help of BackStack using addToBackStack methods and also popBackStack methods.)
+    - Customised the Navigation of a Fragment similar to an Activity.
+
+####### - - Providing Stability to Fragment on Screen Rotation - - #######
+    - The Activity is Destroyed
+        - The Fragment within it is also Destroyed
+    - The Activity is Recreated fresh in requested orientation
+        - THe Fragment is also Recreated fresh
+
+Impact on Views and variables?
+
+
 
 
 
